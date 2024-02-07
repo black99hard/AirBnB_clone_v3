@@ -1,28 +1,30 @@
 #!/usr/bin/python3
-"""
-    Sript that starts a Flask web application
+"""Starts a Flask web application.
+The application listens on 0.0.0.0, port 5000.
+Routes:
+    /states: HTML page with a list of all State objects.
+    /states/<id>: HTML page displaying the given state with <id>.
 """
 from flask import Flask, render_template
 from models import storage
-import os
+from models.state import State
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 @app.teardown_appcontext
-def handle_teardown(self):
-    """
-        method to handle teardown
-    """
+def closedb(exc):
+    """ to close a database session"""
     storage.close()
 
 
-@app.route('/cities_by_states', strict_slashes=False)
-def city_state_list():
-    """
-        method to render states from storage
-    """
-    states = storage.all('State').values()
-    return render_template("8-cities_by_states.html", states=states)
+@app.route('/cities_by_states')
+def states_list():
+    """ /states_list route """
+    states = storage.all(State).values()
+    return render_template('8-cities_by_states.html', states=states)
+
 
 if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=5000)
+    storage.reload()
+    app.run("0.0.0.0", 5000)

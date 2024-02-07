@@ -1,24 +1,23 @@
 #!/usr/bin/python3
-"""
-    Sript that starts a Flask web application
- """
+""" Script that starts a Flask web application """
 from flask import Flask
+
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
-@app.route('/', strict_slashes=False)
-def hello_hbn():
-    """
-        function to return Hello HBNB!
-    """
-    return "Hello HBNB!"
+@app.route('/')
+def hello_hbnb():
+    """ Print Web """
+    return 'Hello HBNB!'
 
 
-@app.route('/hbnb', strict_slashes=False)
+@app.route('/hbnb')
 def hbnb():
-    """
-        function to return HBNB
-    """
-    return "HBNB"
+    """ Print Web """
+    return 'HBNB'
+
+
 if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=5000)
+    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
