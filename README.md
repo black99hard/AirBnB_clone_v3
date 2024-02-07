@@ -46,6 +46,7 @@ HBNB_MYSQL_HOST=localhost HBNB_MYSQL_DB=hbnb_test_db HBNB_TYPE_STORAGE=db \
   * __web static:__ [W3C Validator](https://validator.w3.org/)
   * __bash:__ ShellCheck 0.3.3
 
+<img src="https://github.com/jarehec/AirBnB_clone_v3/blob/master/dev/hbnb_step5.png" />
 
 ## Configuration Files
 
@@ -204,3 +205,19 @@ create: create [ARG] [PARAM 1] [PARAM 2] ...
 
 ---
 
+### Continuous Integration Tests
+
+Uses [Travis-CI](https://travis-ci.org/) to run all tests on all commits to the
+github repo
+
+## Authors
+
+* MJ Johnson, [@mj31508](https://github.com/mj31508)
+* David John Coleman II, [davidjohncoleman.com](http://www.davidjohncoleman.com/) | [@djohncoleman](https://twitter.com/djohncoleman)
+* Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
+* Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
+* Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
+
+## License
+
+MIT License
